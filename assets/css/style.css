@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #ff0919;
+  width: 100%;
+}
+
+.logoHeader {
+  width: 130px;
+  height: 90px;
+  padding-left: 20px;
+}
