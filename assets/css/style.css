@@ -1,3 +1,15 @@
+header img {
+  width: 80px;
+}
+
 body {
   background-color: rgb(255, 235, 235);
+}
+
+.icons {
+  color: #fff;
+}
+
+footer img {
+  width: 2%;
 }
