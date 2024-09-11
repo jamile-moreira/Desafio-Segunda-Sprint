@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recebíveis</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Pagamento</h1>
+    </header>
+    
+    <main>
+        <form id="payment-form">
+            <label for="amount">Valor (R$):</label>
+            <input type="number" id="amount" name="amount" required>
 
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="./style.css" />
+            <label for="method">Método de Pagamento:</label>
+            <select id="method" name="method">
+                <option value="credit-card">Cartão de Crédito</option>
+                <option value="pix">Pix</option>
+            </select>
 
-    <script src="./recebiveis.js" defer></script>
-  </head>
+            <button type="submit">Registrar</button>
+        </form>
 
-  <header>
-    <img
-      class="logoHeader"
-      src="../../images/logoIfood.png"
-      alt="Logo marca da empresa Ifood"
-    />
-  </header>
-
+        <div id="summary">
+            <h2>Resumo</h2>
+            <p>Total Recebido: R$ <span id="total-received">0.00</span></p>
+        </div>
+    </main>
   <body>
     <h1>Página de Recebíveis</h1>
 
