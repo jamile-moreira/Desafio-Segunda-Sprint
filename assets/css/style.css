@@ -9,3 +9,9 @@ body {
 .icons {
   color: #fff;
 }
+
+.error {
+  font-size: 11px;
+  color: #fc1b2a;
+  display: none;
+}
