@@ -20,15 +20,14 @@
     />
 
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <header>
     <nav class="navbar" style="background-color: #fc1b2a">
-      <div class="container-fluid">
+      <div class="container-fluid mb-0">
         <img src="../../images/logoIfood.png" alt="Logo Ifood" />
-
         <form class="d-flex" role="search">
           <button id="btnSair" class="btn btn-outline-light px-4" type="button">
             Sair
@@ -36,14 +35,15 @@
         </form>
       </div>
     </nav>
-  </header>
 
-  <!-- <h1>Página Home</h1> -->
-  <body>
     <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <div
+        class="nav nav-tabs d-flex justify-content-evenly m-2"
+        id="nav-tab"
+        role="tablist"
+      >
         <button
-          class="nav-link active"
+          class="nav-link active px-5 link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
           id="nav-home-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-home"
@@ -55,19 +55,17 @@
           Home
         </button>
         <button
-          class="nav-link"
-          id="nav-profile-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-profile"
-          type="button"
-          role="tab"
-          aria-controls="nav-profile"
-          aria-selected="false"
-        >
-          Profile
-        </button>
+        class="nav-link px-5"
+        id="nav-profile-tab"
+        type="button"
+      role="tab"
+  aria-controls="nav-profile"
+  aria-selected="false"
+>
+  Pagamentos
+</button>
         <button
-          class="nav-link"
+          class="nav-link px-5"
           id="nav-contact-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-contact"
@@ -76,10 +74,10 @@
           aria-controls="nav-contact"
           aria-selected="false"
         >
-          Contact
+          Recebíveis
         </button>
         <button
-          class="nav-link"
+          class="nav-link px-5"
           id="nav-disabled-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-disabled"
@@ -87,47 +85,61 @@
           role="tab"
           aria-controls="nav-disabled"
           aria-selected="false"
-          disabled
         >
-          Disabled
-        </button>
-      </div>
-    </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="nav-home"
-        role="tabpanel"
-        aria-labelledby="nav-home-tab"
-        tabindex="0"
-      ></div>
-      <div
-        class="tab-pane fade"
-        id="nav-profile"
-        role="tabpanel"
-        aria-labelledby="nav-profile-tab"
-        tabindex="0"
-      ></div>
-      <div
-        class="tab-pane fade"
-        id="nav-contact"
-        role="tabpanel"
-        aria-labelledby="nav-contact-tab"
-        tabindex="0"
-      >
-        ...
-      </div>
-      <div
-        class="tab-pane fade"
-        id="nav-disabled"
-        role="tabpanel"
-        aria-labelledby="nav-disabled-tab"
-        tabindex="0"
-      ></div>
+        Saldo e Extrato
+      </button>
     </div>
-
+  </nav>
+</header>
+<body>
+  <div>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+          tabindex="0"
+        >
+        <div class="img-fluid d-flex justify-content-around py-3">
+          <img src="../../images/imageHome.png" class="rounded" alt="..." />
+          <div class="card border-danger mb-3" style="max-width: 18rem;">
+            <div class="card-header">Saiu na mídia</div>
+            <div class="card-body text-danger">
+              <h5 class="card-title">Acompanhe</h5>
+              <p class="card-text">Mês do Cliente: iFood leva experiência de fazer mercado online e distribui brindes e prêmios na Avenida Paulista, em São Paulo</p>
+              <a href="https://saladanoticia.com.br/noticia/92904/mes-do-cliente-ifood-leva-experiencia-de-fazer-mercado-online-e-distribui-brindes-e-premios-na-avenida-paulista-em-sao-paulo">Saiba mais aqui</a>
+            </div>
+        </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+          tabindex="0"
+        ></div>
+        <div
+          class="tab-pane fade"
+          id="nav-contact"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+          tabindex="0"
+        >
+          ...
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-disabled"
+          role="tabpanel"
+          aria-labelledby="nav-disabled-tab"
+          tabindex="0"
+        ></div>
+      </div>
+    </div>
     <script src="../../pages/Home/home.js" type="module" defer></script>
   </body>
+
   <footer>
     <nav class="navbar fixed-bottom" style="background-color: #fc1b2a">
       <div class="container-fluid d-flex justify-content-evenly">
