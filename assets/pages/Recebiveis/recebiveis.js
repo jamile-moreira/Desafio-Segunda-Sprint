@@ -1,23 +1,49 @@
-// function sair(event) {
-//   event.preventDefault()
+function sair(event) {
+  event.preventDefault()
 
-//   const deslogar = document.getElementById('btnSair')
+  const deslogar = document.getElementById('btnSair')
 
-//   if (deslogar) {
-//     window.location.href = '../../index.html'
-//   }
-// }
+  if (deslogar) {
+    window.location.href = '../../../index.html'
+  }
+}
 
-// document.getElementById('btnSair').addEventListener('click', sair)
+document.getElementById('btnSair').addEventListener('click', sair)
 
-// function pagamentos(event) {
-//   event.preventDefault()
+function pagamentos(event) {
+  event.preventDefault()
 
-//   const pagar = document.getElementById('nav-profile-tab')
+  const pagar = document.getElementById('nav-profile-tab')
 
-//   if (pagar) {
-//     window.location.href = '../Pagamentos/index.html'
-//   }
-// }
+  if (pagar) {
+    window.location.href = '../Pagamentos/index.html'
+  }
+}
 
-// document.getElementById('nav-profile-tab').addEventListener('click', pagamentos)
+document.getElementById('nav-profile-tab').addEventListener('click', pagamentos)
+
+function home(event) {
+  event.preventDefault()
+
+  const inicio = document.getElementById('nav-home-tab')
+
+  if (inicio) {
+    window.location.href = '../Home/index.html'
+  }
+}
+
+document.getElementById('nav-home-tab').addEventListener('click', home)
+
+function saldoExtrato(event) {
+  event.preventDefault()
+
+  const consultar = document.getElementById('nav-disabled-tab')
+
+  if (consultar) {
+    window.location.href = '../SaldoExtrato/index.html'
+  }
+}
+
+document
+  .getElementById('nav-disabled-tab')
+  .addEventListener('click', saldoExtrato)

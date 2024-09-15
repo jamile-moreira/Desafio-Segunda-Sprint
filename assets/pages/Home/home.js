@@ -25,13 +25,25 @@ document.getElementById('nav-profile-tab').addEventListener('click', pagamentos)
 function recebiveis(event) {
   event.preventDefault()
 
-  const receber = document.getElementById('nav-disabled-tab')
+  const receber = document.getElementById('nav-contact-tab')
 
   if (receber) {
     window.location.href = '../Recebiveis/index.html'
   }
 }
 
+document.getElementById('nav-contact-tab').addEventListener('click', recebiveis)
+
+function saldoExtrato(event) {
+  event.preventDefault()
+
+  const consultar = document.getElementById('nav-disabled-tab')
+
+  if (consultar) {
+    window.location.href = '../SaldoExtrato/index.html'
+  }
+}
+
 document
   .getElementById('nav-disabled-tab')
-  .addEventListener('click', recebiveis)
+  .addEventListener('click', saldoExtrato)
