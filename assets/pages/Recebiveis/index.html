@@ -121,4 +121,95 @@
       </div>
     </nav>
   </footer>
+
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard Financeiro</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+  <div class="dashboard">
+    <div class="month-navigation">
+      <button id="prev-month" class="nav-button">&#9664;</button>
+      <span id="current-month"></span>
+      <button id="next-month" class="nav-button">&#9654;</button>
+    </div>
+    <div id="chart-container">
+      <div class="card">
+        <h2>Pratos Mais Vendidos</h2>
+        <div class="chart">
+          <ul>
+            <li style="height: 70%" data-quantity="Café Expresso: 50 vendidos">Café Expresso (50%)</li>
+            <li style="height: 45%" data-quantity="Bolo de Chocolate: 20 vendidos">Bolo de Chocolate (20%)</li>
+            <li style="height: 35%" data-quantity="Cookies: 10 vendidos">Cookies (10%)</li>
+            <li style="height: 35%" data-quantity="Vitamina de Morango: 10 vendidos">Vitamina de Morango (10%)</li>
+            <li style="height: 26%" data-quantity="Pão de Mel: 5 vendidos">Pão de Mel (5%)</li>
+            <li style="height: 20%" data-quantity="Pão de Batata: 3 vendidos">Pão de Batata (3%)</li>
+            <li style="height: 15%" data-quantity="Outros: 5 vendidos">Outros (2%)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cards-container">
+      <div id="price-variation" class="price-variation-card">
+        <h2>Valor Médio por Pedido:</h2>
+        <p>Atual: R$ 29,90</p>
+        <p>Variação em relação ao último mês: <span style="color: red;">[ainda sem resultado]</span></p>
+      </div>
+      <div id="reviews" class="card reviews-card">
+        <h2>Avaliações</h2>
+        <div class="reviews-summary">
+          <p>Total de Avaliações: <strong>210</strong></p>
+          <p>Média de Avaliação: <strong>4.1</strong></p>
+          <button id="view-details" class="view-details-button">Mais Infomações > </button>
+        </div>
+        <div id="stars-chart">
+          <ul>
+            <li style="width: 80%;" data-quantity="80 avaliações">5 Estrelas</li>
+            <li style="width: 60%;" data-quantity="60 avaliações">4 Estrelas</li>
+            <li style="width: 40%;" data-quantity="40 avaliações">3 Estrelas</li>
+            <li style="width: 20%;" data-quantity="20 avaliações">2 Estrelas</li>
+            <li style="width: 11%;" data-quantity="10 avaliações">1 Estrela</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div id="details-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Detalhes Adicionais</h2>
+        <p>Informações adicionais sobre avaliações e outros dados importantes.</p>
+        <!-- Adicione mais detalhes aqui -->
+      </div>
+    </div>
+    <div id="no-records-message" class="message">
+      <h2>Estabelecimento não possui registro desse período</h2>
+    </div>
+    <div id="future-records-message" class="message">
+      <h2>Estabelecimento ainda não possui registros do período</h2>
+    </div>
+  </div>
+
+  <script>
+    // Script para abrir e fechar o modal
+    document.getElementById('view-details').onclick = function() {
+      document.getElementById('details-modal').style.display = 'block';
+    }
+    
+    document.querySelector('.modal .close').onclick = function() {
+      document.getElementById('details-modal').style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+      if (event.target === document.getElementById('details-modal')) {
+        document.getElementById('details-modal').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
 </html>
