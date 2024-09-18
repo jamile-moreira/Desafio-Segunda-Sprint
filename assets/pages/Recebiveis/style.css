@@ -295,3 +295,42 @@ h2 {
   cursor: pointer;
 }
 
+/* Estilo para os comentários */
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  color: red;
+  font-weight: bold;
+}
+
+.comment-text {
+  color: #666;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.see-more-button {
+  background-color: #00aeff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.see-more-button:hover {
+  background-color: #008bcc;
+}
