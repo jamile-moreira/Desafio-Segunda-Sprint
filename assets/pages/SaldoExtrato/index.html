@@ -101,6 +101,81 @@
       defer
     ></script>
   </body>
+
+  <main>
+
+    <div class="container-md mt-3">
+      <div class="container-saldo">
+      <div class="mb-3">
+          <h5 class="text-muted">Saldo Atual:</h5>
+          <p class="rs">R$</p>
+          <p class="h4 mb-0"> 134,06</p>
+          <p class="receber">Status: 1304,26 a receber</p>
+      </div>
+    </div>
+
+
+    <div class="container-data">
+      <h4 class="mb-3">Detalhe do Faturamento</h4>
+      <h6 class="mb-2">Período de vendas</h6>
+      <div class="d-flex gap-2 mb-3">
+          <div>
+              De: <input type="date" id="startDate">
+              A: <input type="date" id="endDate">
+              <button type="button" class="btn btn-dark" onclick="filterTable()">Filtrar</button>
+          </div>
+      </div>
+
+      <table id="transactionTable" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01/09/2024</td>
+                <td>PIX</td>
+                <td>R$ 43,00</td>
+            </tr>
+          </tr>
+          <td>11/09/2024</td>
+          <td>Crédito</td>
+          <td>R$ 26,00</td>
+      </tr>
+      <tr>
+        <td>13/09/2024</td>
+        <td>Crédito</td>
+        <td>R$ 26,00</td>
+    </tr>
+            <tr>
+                <td>15/09/2024</td>
+                <td>Débito</td>
+                <td>R$ 34,00</td>
+            </tr>
+            <tr>
+                <td>20/09/2024</td>
+                <td>Pix</td>
+                <td>R$ 69,00</td>
+            </tr>
+            
+            <tr id="noDataRow">
+                <td colspan="3" class="text-center text-muted">Dados disponíveis somente para este mês</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+    
+    
+  </main>
+
+
+
+
   <footer>
     <nav class="navbar fixed-bottom" style="background-color: #fc1b2a">
       <div class="container-fluid d-flex justify-content-evenly">

@@ -48,9 +48,6 @@ document
   .getElementById('nav-disabled-tab')
   .addEventListener('click', saldoExtrato)
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const currentMonth = '09/2024'; // Mês atual
   let currentDisplayedMonth = '09/2024'; // Mês exibido inicialmente
