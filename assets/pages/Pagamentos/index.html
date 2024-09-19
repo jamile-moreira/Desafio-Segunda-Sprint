@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 
-<body>
     <header>
         <nav class="navbar" style="background-color: #fc1b2a">
             <div class="container-fluid mb-0">
@@ -32,11 +31,86 @@
         </nav>
     </header>
 
-    <main>
-    </main>
-
+<body>
+      <section class="finance-summary">
+          <h2>Resumo Financeiro</h2>
+          <div class="summary-cards">
+              <div class="card">
+                  <h3>Total de Vendas</h3>
+                  <p id="total-sales">R$ 0,00</p>
+              </div>
+              <div class="card">
+                  <h3>Recebíveis Pendentes</h3>
+                  <p id="pending-receivables">R$ 0,00</p>
+              </div>
+              <div class="card">
+                  <h3>Recebidos</h3>
+                  <p id="received">R$ 0,00</p>
+              </div>
+              <div class="card">
+                  <h3>Comissões</h3>
+                  <p id="commissions">R$ 0,00</p>
+              </div>
+          </div>
+      </section>
+      <section class="payment-management">
+        <h2>Gerenciamento de Transações</h2>
+        <form id="transaction-form">
+            <div class="form-group">
+                <label for="transaction-amount">Valor da Transação (R$):</label>
+                <input type="number" id="transaction-amount" name="transaction-amount" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="payment-method">Método de Pagamento:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="credit-card">Cartão de Crédito</option>
+                    <option value="pix">Pix</option>
+                    <option value="boleto">Boleto</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="restaurant-receivable">Valor para o Restaurante (R$):</label>
+                <input type="number" id="restaurant-receivable" name="restaurant-receivable" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="commission">Comissão do iFood (%):</label>
+                <input type="number" id="commission" name="commission" value="12" required>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Registrar Transação</button>
+        </form>
+    
+        <div id="transaction-result" class="result-message"></div>
+    </section>
+    
+    <script src="script.js"></script>
     <script src="./pagamentos.js" type="module" defer></script>
 </body>
+
+<footer>
+  <nav class="navbar fixed-bottom" style="background-color: #fc1b2a">
+    <div class="container-fluid d-flex justify-content-evenly">
+      <a
+        class="icons fa-brands fa-instagram navbar-brand px-4"
+        target="_blank"
+        href="https://www.instagram.com/ifoodbrasil/"
+      ></a>
+      <a
+        class="icons fa-brands fa-facebook navbar-brand px-4"
+        target="_blank"
+        href="https://www.facebook.com/iFood/events/?locale=pt_BR&_rdr"
+      ></a>
+      <a
+        class="icons fa-brands fa-linkedin-in navbar-brand px-4"
+        target="_blank"
+        href="https://www.linkedin.com/company/ifood-/posts/?feedView=all"
+      ></a>
+    </div>
+  </nav>
+</footer>
 
 <nav class="navbar fixed-bottom" style="background-color: #fc1b2a">
     <div class="container-fluid d-flex justify-content-evenly">
@@ -45,74 +119,5 @@
         <a class="icons fa-brands fa-linkedin-in navbar-brand px-4" target="_blank" href="https://www.linkedin.com/company/ifood-/posts/?feedView=all"></a>
     </div>
 </nav>
-</html>
 
-</header>    </main>
-  <body>
-   
-    
-    <main>
-        <section class="finance-summary">
-            <h2>Resumo Financeiro</h2>
-            <div class="summary-cards">
-                <div class="card">
-                    <h3>Total de Vendas</h3>
-                    <p id="total-sales">R$ 0,00</p>
-                </div>
-                <div class="card">
-                    <h3>Recebíveis Pendentes</h3>
-                    <p id="pending-receivables">R$ 0,00</p>
-                </div>
-                <div class="card">
-                    <h3>Recebidos</h3>
-                    <p id="received">R$ 0,00</p>
-                </div>
-                <div class="card">
-                    <h3>Comissões</h3>
-                    <p id="commissions">R$ 0,00</p>
-                </div>
-            </div>
-        </section>
-        <section class="payment-management">
-          <h2>Gerenciamento de Transações</h2>
-          <form id="transaction-form">
-              <div class="form-group">
-                  <label for="transaction-amount">Valor da Transação (R$):</label>
-                  <input type="number" id="transaction-amount" name="transaction-amount" required>
-              </div>
-      
-              <div class="form-group">
-                  <label for="payment-method">Método de Pagamento:</label>
-                  <select id="payment-method" name="payment-method">
-                      <option value="credit-card">Cartão de Crédito</option>
-                      <option value="pix">Pix</option>
-                      <option value="boleto">Boleto</option>
-                  </select>
-              </div>
-      
-              <div class="form-group">
-                  <label for="restaurant-receivable">Valor para o Restaurante (R$):</label>
-                  <input type="number" id="restaurant-receivable" name="restaurant-receivable" required>
-              </div>
-      
-              <div class="form-group">
-                  <label for="commission">Comissão do iFood (%):</label>
-                  <input type="number" id="commission" name="commission" value="12" required>
-              </div>
-      
-              <button type="submit" class="btn btn-primary">Registrar Transação</button>
-          </form>
-      
-          <div id="transaction-result" class="result-message"></div>
-      </section>
-      
-
-    </main>
-
-    <footer>
-        <p>&copy; 2024 iFood. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
 </html>
