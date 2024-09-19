@@ -3,8 +3,11 @@ body {
   background-color: white;
 }
 
-.navbar {
-  background-color: #fc1b2a;
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1px;
+  color: #333;
+  text-align: center;
 }
 
 button {
