@@ -25,11 +25,11 @@
   </head>
 
   <header>
-    <nav class="navbar" style="background-color: #fc1b2a">
-      <div class="container-fluid mb-0">
-        <img src="../../images/logoIfood.png" alt="Logo Ifood" />
-        <form class="d-flex" role="search">
-          <button id="btnSair" class="btn btn-outline-light px-4" type="button">
+    <nav class="navbar">
+      <div class="container-fluid d-flex justify-content-between">
+        <img src="../../images/LogoIfood.png" />
+        <form role="search">
+          <button id="btnSair" class="btn btn-danger px-4" type="button">
             Sair
           </button>
         </form>
@@ -88,63 +88,56 @@
           aria-controls="nav-disabled"
           aria-selected="false"
         >
-        Saldo e Extrato
-      </button>
+          Saldo e Extrato
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+
+    <div class="container my-4">
+      <figure class="text-center">
+          <p class="h1">Já está sabendo da "quentinha"?</p>
+        
+          <blockquote class="blockquote">
+        <p class="text-body-secondary"><em>
+          Estamos felizes em tê-lo(a) aqui. Acompanhe as últimas novidades do
+          iFood e fique por dentro de tudo que é relevante para o seu negócio.
+          Explore nossas notícias exclusivas e aproveite os benefícios e
+          oportunidades que preparamos especialmente para você. Boa navegação!
+        </em></p>
+      </blockquote>
     </div>
-  </nav>
-</header>
-<body>
-  <div>
-      <div class="tab-content" id="nav-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="nav-home"
-          role="tabpanel"
-          aria-labelledby="nav-home-tab"
-          tabindex="0"
-        >
-        <div class="img-fluid d-flex justify-content-around py-3">
-          <img src="../../images/imageHome.png" class="rounded" alt="..." />
-          <div class="card border-danger mb-3" style="max-width: 18rem;">
-            <div class="card-header">Saiu na mídia</div>
-            <div class="card-body text-danger">
-              <h5 class="card-title">Acompanhe</h5>
-              <p class="card-text">Mês do Cliente: iFood leva experiência de fazer mercado online e distribui brindes e prêmios na Avenida Paulista, em São Paulo</p>
-              <a href="https://saladanoticia.com.br/noticia/92904/mes-do-cliente-ifood-leva-experiencia-de-fazer-mercado-online-e-distribui-brindes-e-premios-na-avenida-paulista-em-sao-paulo">Clique aqui</a>
+
+    <div class="container d-flex">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+          <div class="card">
+            <img class="card-img-top" src="../../images/Brindes.jpeg" />
+            <div class="card-block">
+              <h5 class="text-bold">No Mês do Cliente, IFood distribui prêmios e brindes na Avenida Paulista</h5>
+                <a target="_blank" href="https://www.promoview.com.br/experiencia-de-marca/ativacao/no-mes-do-cliente-ifood-distribui-premios-e-brindes-na-avenida-paulista/">Saiba mais aqui</a>
             </div>
+          </div>
         </div>
+        <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+          <div class="card">
+            <img class="card-img-top" src="../../images/Benef.jpeg" />
+            <div class="card-block">
+              <h5 class="text-bold">O iFood Benefícios é um benefício flexível para empresas, conheça nosso produto</h5>
+                <a target="_blank" href="https://beneficios.ifood.com.br/?gad_source=1&gclid=CjwKCAjwpbi4BhByEiwAMC8JnSA6bYJd-7zkdZbIGuLdo_LpILRZxY1g3srTSTYFC5Qfy0bcpLUNMRoCUS4QAvD_BwE">Saiba mais aqui</a>
+            </div>
+          </div>
         </div>
-        <div
-          class="tab-pane fade"
-          id="nav-profile"
-          role="tabpanel"
-          aria-labelledby="nav-profile-tab"
-          tabindex="0"
-        ></div>
-        <div
-          class="tab-pane fade"
-          id="nav-contact"
-          role="tabpanel"
-          aria-labelledby="nav-contact-tab"
-          tabindex="0"
-        >
-          ...
-        </div>
-        <div
-          class="tab-pane fade"
-          id="nav-disabled"
-          role="tabpanel"
-          aria-labelledby="nav-disabled-tab"
-          tabindex="0"
-        ></div>
       </div>
     </div>
     <script src="../../pages/Home/home.js" type="module" defer></script>
   </body>
 
   <footer>
-    <nav class="navbar fixed-bottom" style="background-color: #fc1b2a">
-      <div class="container-fluid d-flex justify-content-evenly">
+    <nav class="navbar fixed-bottom bg-transparent p-3 border border-danger">
+      <div class="container-fluid d-flex justify-content-center">
         <a
           class="icons fa-brands fa-instagram navbar-brand px-4"
           target="_blank"

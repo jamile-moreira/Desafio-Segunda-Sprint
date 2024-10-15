@@ -2,12 +2,21 @@ header img {
   width: 80px;
 }
 
-body {
-  background-color: rgb(255, 235, 235);
+body,
+html {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(253, 169, 169)
+  );
 }
 
 .icons {
-  color: #fff;
+  color: #fc1b2a;
 }
 
 .error {
