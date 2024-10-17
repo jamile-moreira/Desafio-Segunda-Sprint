@@ -1,51 +1,4 @@
-/* Estilos Globais */
-body {
-  background-color: white;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1px;
-  color: #333;
-  text-align: center;
-}
-
-button {
-  background-color: #fc1b2a;
-  color: white;
-  border: none;
-}
-
-button:hover {
-  background-color: #e02600;
-}
-
-#payment-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-#summary {
-  text-align: center;
-  background-color: #fafafa;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-#summary h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-#summary p {
-  font-size: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-/* Resumo Financeiro */
+/* 
 .finance-summary {
   padding: 20px;
   background-color: #fff;
@@ -82,7 +35,7 @@ button:hover {
 }
 
 /* Estilos para a seção de Gerenciamento de Transações */
-.payment-management {
+/* .payment-management {
   background-color: #f8f9fa;
   padding: 20px;
   border-radius: 8px;
@@ -133,4 +86,4 @@ button:hover {
 
 .payment-management button:hover {
   background-color: #e01a1a;
-}
+}  */
