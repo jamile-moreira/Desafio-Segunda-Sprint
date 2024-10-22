@@ -1,57 +1,3 @@
-document
-  .querySelector('button[type="button"]')
-  .addEventListener('click', function (e) {
-    e.preventDefault()
-
-    // Capturando os valores dos inputs
-    const transactionAmount = parseFloat(
-      document
-        .querySelector('input[placeholder="R$ 0,00"]')
-        .value.replace('R$', '')
-        .replace(',', '.')
-    )
-    const paymentMethod = document.getElementById('autoSizingSelect').value
-    const restaurantReceivable = parseFloat(
-      document
-        .querySelector('input[placeholder="R$ 0,00"]')
-        .value.replace('R$', '')
-        .replace(',', '.')
-    )
-    const commissionPercentage = parseFloat(
-      document.querySelector('input[type="text"]').value
-    )
-
-    // Calculando comissão e valor recebido
-    const commissionAmount = transactionAmount * (commissionPercentage / 100)
-    const receivedAmount = restaurantReceivable - commissionAmount
-
-    // Atualiza o resumo financeiro
-    updateFinancialSummary(
-      transactionAmount,
-      restaurantReceivable,
-      commissionAmount
-    )
-
-    // Exibe o resultado
-    document.getElementById(
-      'transaction-result'
-    ).textContent = `Transação registrada com sucesso! Restaurante receberá R$ ${receivedAmount.toFixed(
-      2
-    )}. Comissão do iFood: R$ ${commissionAmount.toFixed(2)}.`
-  })
-
-// Função para atualizar o resumo financeiro
-function updateFinancialSummary(
-  transactionAmount,
-  restaurantReceivable,
-  commissionAmount
-) {
-  // Aqui você pode armazenar os valores e fazer o update na tela, conforme necessário
-  document.querySelector(
-    'td:nth-child(2)'
-  ).textContent = `R$ ${transactionAmount.toFixed(2)}`
-}
-
 function sair(event) {
   event.preventDefault()
 
@@ -97,7 +43,65 @@ function saldoExtrato(event) {
     window.location.href = '../SaldoExtrato/index.html'
   }
 }
-
 document
   .getElementById('nav-disabled-tab')
   .addEventListener('click', saldoExtrato)
+
+let totalSalesValue = 0
+let totalReceivedValue = 0
+let totalCommissionsValue = 0
+
+document
+  .getElementById('registerTransaction')
+  .addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const transactionAmountField = document.getElementById('transactionAmount')
+    const transactionAmount = parseFloat(
+      transactionAmountField.value.replace('R$', '').replace(',', '.')
+    )
+
+    const paymentMethod = document.getElementById('autoSizingSelect').value
+    const paymentMethodText =
+      document.getElementById('autoSizingSelect').options[
+        document.getElementById('autoSizingSelect').selectedIndex
+      ].text
+
+    if (isNaN(transactionAmount) || paymentMethod === 'Selecione') {
+      alert(
+        'Por favor, insira um valor válido e selecione o método de pagamento.'
+      )
+      return
+    }
+
+    const commissionAmount = transactionAmount * 0.1
+    const receivedAmount = transactionAmount * 0.9
+
+    totalSalesValue += transactionAmount
+    totalCommissionsValue += commissionAmount
+    totalReceivedValue += receivedAmount
+
+    document.getElementById(
+      'total-sales'
+    ).textContent = `R$ ${totalSalesValue.toFixed(2)}`
+    document.getElementById(
+      'commissions'
+    ).textContent = `R$ ${totalCommissionsValue.toFixed(2)}`
+    document.getElementById(
+      'received'
+    ).textContent = `R$ ${totalReceivedValue.toFixed(2)}`
+
+    const currentDate = new Date().toLocaleString()
+    const transaction = {
+      date: currentDate,
+      method: paymentMethodText,
+      amount: transactionAmount.toFixed(2),
+    }
+
+    let transactions = JSON.parse(localStorage.getItem('transactions')) || []
+    transactions.push(transaction)
+    localStorage.setItem('transactions', JSON.stringify(transactions))
+
+    transactionAmountField.value = ''
+    document.getElementById('autoSizingSelect').value = 'Selecione'
+  })

@@ -59,3 +59,43 @@ function saldoExtrato(event) {
 document
   .getElementById('nav-disabled-tab')
   .addEventListener('click', saldoExtrato)
+
+window.addEventListener('load', function () {
+  // Recupera as transações e o saldo armazenado
+  const transactions = JSON.parse(localStorage.getItem('transactions')) || []
+  const saldoAtualElement = document.getElementById('saldo')
+  const tabelaExtrato = document
+    .getElementById('tabela-extrato')
+    .getElementsByTagName('tbody')[0]
+
+  let saldoAtual = 0
+
+  // Limpa a tabela de extrato ao recarregar
+  while (tabelaExtrato.rows.length > 0) {
+    tabelaExtrato.deleteRow(0)
+  }
+
+  // Itera sobre as transações e preenche a tabela
+  transactions.forEach((transaction) => {
+    saldoAtual += parseFloat(transaction.amount)
+
+    const row = tabelaExtrato.insertRow()
+    const dataCell = row.insertCell(0)
+    const metodoCell = row.insertCell(1)
+    const valorCell = row.insertCell(2)
+
+    dataCell.textContent = transaction.date
+    metodoCell.textContent = transaction.method
+    valorCell.textContent = `R$ ${transaction.amount}`
+  })
+
+  // Atualiza o saldo atual com o valor armazenado no localStorage
+  const valorRecebidos = localStorage.getItem('valorRecebidos')
+  if (valorRecebidos) {
+    saldoAtualElement.textContent = `R$ ${parseFloat(valorRecebidos).toFixed(
+      2
+    )}`
+  } else {
+    saldoAtualElement.textContent = `R$ ${saldoAtual.toFixed(2)}`
+  }
+})

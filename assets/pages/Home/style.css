@@ -3,3 +3,8 @@
   height: 120px;
   object-fit: cover;
 }
+.lead {
+  font-size: 1em;
+  text-align: justify;
+  color: #e00000;
+}
