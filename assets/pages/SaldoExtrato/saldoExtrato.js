@@ -61,7 +61,6 @@ document
   .addEventListener('click', saldoExtrato)
 
 window.addEventListener('load', function () {
-  // Recupera as transações e o saldo armazenado
   const transactions = JSON.parse(localStorage.getItem('transactions')) || []
   const saldoAtualElement = document.getElementById('saldo')
   const tabelaExtrato = document
@@ -70,12 +69,10 @@ window.addEventListener('load', function () {
 
   let saldoAtual = 0
 
-  // Limpa a tabela de extrato ao recarregar
   while (tabelaExtrato.rows.length > 0) {
     tabelaExtrato.deleteRow(0)
   }
 
-  // Itera sobre as transações e preenche a tabela
   transactions.forEach((transaction) => {
     saldoAtual += parseFloat(transaction.amount)
 
@@ -89,7 +86,6 @@ window.addEventListener('load', function () {
     valorCell.textContent = `R$ ${transaction.amount}`
   })
 
-  // Atualiza o saldo atual com o valor armazenado no localStorage
   const valorRecebidos = localStorage.getItem('valorRecebidos')
   if (valorRecebidos) {
     saldoAtualElement.textContent = `R$ ${parseFloat(valorRecebidos).toFixed(
